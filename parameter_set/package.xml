@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>parameter_set</name>
+  <version>0.0.0</version>
+  <description>Paterns and sugar for ROS2 Parameters</description>
+  <maintainer email="tylerjw@gmail.com">Tyler Weaver</maintainer>
+  <license>BSD-3-Clause</license>
+
+  <buildtool_depend>ament_cmake_ros</buildtool_depend>
+
+  <build_depend>rcl</build_depend>
+  <build_depend>rclcpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+
+  <test_depend>parameter_builder</test_depend>
+  <test_depend>ament_cmake_cppcheck</test_depend>
+  <test_depend>ament_cmake_gmock</test_depend>
+  <test_depend>ament_cmake_lint_cmake</test_depend>
+  <test_depend>ament_cmake_xmllint</test_depend>
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ros_testing</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

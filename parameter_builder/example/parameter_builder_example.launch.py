@@ -45,7 +45,9 @@ def generate_launch_description():
                     .file_parameter(
                         "parameter_file", "config/parameter_file"
                     )  # Or /absolute/path/to/file
-                    .yaml(file_path="config/parameters.yaml")  # Or /absolute/path/to/file
+                    .yaml(
+                        file_path="config/parameters.yaml"
+                    )  # Or /absolute/path/to/file
                     .xacro_parameter(
                         parameter_name="my_robot",
                         file_path="config/parameter.xacro",  # Or /absolute/path/to/file

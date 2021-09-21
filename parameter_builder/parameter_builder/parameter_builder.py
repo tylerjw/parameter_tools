@@ -44,9 +44,13 @@ class ParameterBuilder(object):
     def yaml(self, file_path: str, parameter_namespace: str = None):
         if parameter_namespace:
             if parameter_namespace in self._parameters:
-                self._parameters[parameter_namespace].update(load_yaml(self._package_path / file_path))
+                self._parameters[parameter_namespace].update(
+                    load_yaml(self._package_path / file_path)
+                )
             else:
-                self._parameters[parameter_namespace] = load_yaml(self._package_path / file_path)
+                self._parameters[parameter_namespace] = load_yaml(
+                    self._package_path / file_path
+                )
         else:
             self._parameters.update(load_yaml(self._package_path / file_path))
         return self

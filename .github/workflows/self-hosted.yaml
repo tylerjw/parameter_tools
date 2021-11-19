@@ -20,9 +20,7 @@ jobs:
     env:
       BEFORE_BUILD_TARGET_WORKSPACE: ./.ci.install_absl
       AFTER_RUN_TARGET_TEST: ${{ matrix.env.CCOV && './.ci.prepare_codecov' || '' }}
-      TARGET_CMAKE_ARGS: >
-        -DCMAKE_BUILD_TYPE=${{ matrix.env.CCOV && 'Debug' || 'Release'}}
-        ${{ matrix.env.CCOV && '-DCMAKE_CXX_FLAGS="--coverage" --no-warn-unused-cli' || '' }}
+      TARGET_CMAKE_ARGS: -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_FLAGS=-fsanitize=address -DCMAKE_CXX_FLAGS=-fsanitize=address
       CCACHE_DIR: ${{ github.workspace }}/.ccache
       BASEDIR: ${{ github.workspace }}/.work
       CACHE_PREFIX: ${{ matrix.env.ROS_DISTRO }}-${{ matrix.env.ROS_REPO }}
